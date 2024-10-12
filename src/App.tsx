@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
+import {RootNavigation} from "./navigation";
+import {HashRouter} from "react-router-dom";
 
-function App() {
+export const App = () => {
   return (
-    <div className="App">
-
-    </div>
+    <HashRouter>
+        <RootNavigation />
+    </HashRouter>
   );
 }
 
