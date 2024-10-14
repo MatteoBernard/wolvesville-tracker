@@ -1,7 +1,9 @@
+import {Template} from "./Template";
+
 export const AllRoles = () => {
     return (
-        <div>
-        <h1>Roles</h1>
-        </div>
+        <Template>
+            <h1>Roles</h1>
+        </Template>
     );
 }

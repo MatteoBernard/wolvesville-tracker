@@ -2,6 +2,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../redux";
 import {useEffect} from "react";
 import {fetchRoles, fetchRolesRotations} from "../redux/slices";
+import {Template} from "./Template";
 
 export const Home = () => {
 
@@ -20,8 +21,8 @@ export const Home = () => {
 
 
     return (
-        <div>
+        <Template>
             <h1>Home</h1>
-        </div>
+        </Template>
     );
 }

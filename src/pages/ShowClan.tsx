@@ -1,7 +1,9 @@
+import {Template} from "./Template";
+
 export const ShowClan = () => {
     return (
-        <div>
-        <h1>ShowClan</h1>
-        </div>
+        <Template>
+            <h1>ShowClan</h1>
+        </Template>
     );
 }

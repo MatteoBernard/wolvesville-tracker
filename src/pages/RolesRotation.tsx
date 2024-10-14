@@ -1,7 +1,9 @@
+import {Template} from "./Template";
+
 export const RolesRotation = () => {
     return (
-        <div>
-        <h1>Roles Rotation</h1>
-        </div>
+        <Template>
+            <h1>Roles Rotation</h1>
+        </Template>
     );
 }
