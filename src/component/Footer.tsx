@@ -1,7 +1,7 @@
 export const Footer = () => {
     return (
         <footer className="bg-wv-red flex flex-col items-center p-4">
-            <p className="text-white text-2xl mb-2"><a href={"https://www.wolvesville.com/"}>Wolvesville</a> tracker - Bernard Matteo</p>
+            <p className="text-white text-2xl mb-2"><a href={"https://www.wolvesville.com/"} target={"_blank"}>Wolvesville</a> tracker - Bernard Matteo</p>
             <a href="https://github.com/MatteoBernard/wolvesville-tracker" target="_blank" className="flex items-center center gap-2">
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" className="w-8 h-8">
                     <title>GitHub</title>

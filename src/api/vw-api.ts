@@ -31,7 +31,7 @@ export const getRolesRotations = async (): Promise<RolesRotationResponse> => {
     }
 }
 
-export const searchPlayer = async (username: string): Promise<Player | null> => {
+export const searchPlayer = async (username: string): Promise<Player | null | undefined> => {
     try {
         const response = await axios.get<Player>(API_URL + 'players/search?username=' + username, { headers: headers });
         console.log(response.data);
@@ -40,22 +40,20 @@ export const searchPlayer = async (username: string): Promise<Player | null> => 
         }
         return response.data;
     } catch (error) {
-        console.error('Error fetching data:', error);
-        throw error;
+        console.log('Player not found.');
     }
 }
 
-export const searchClan = async (name: string): Promise<Clan | null> => {
+export const searchClan = async (name: string): Promise<Clan[] | null | undefined> => {
     try {
-        const response = await axios.get<Clan>(API_URL + 'clans/search?name=' + name, { headers: headers });
+        const response = await axios.get<Clan[]>(API_URL + 'clans/search?name=' + name, { headers: headers });
         console.log(response.data);
         if (response.status === 404) {
             return null;
         }
         return response.data;
     } catch (error) {
-        console.error('Error fetching data:', error);
-        throw error;
+        console.log('Clan not found');
     }
 }
 

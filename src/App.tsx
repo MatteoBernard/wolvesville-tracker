@@ -6,7 +6,7 @@ import {HashRouter} from "react-router-dom";
 export const App = () => {
   return (
     <HashRouter>
-        <div className={"min-h-screen flex flex-col font-sans font-medium"}>
+        <div className={"min-h-screen flex flex-col font-sans font-medium bg-wv-grey"}>
             <RootNavigation />
         </div>
     </HashRouter>

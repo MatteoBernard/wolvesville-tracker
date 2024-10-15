@@ -8,7 +8,7 @@ export const Template = ({children}: TemplateProps) => {
     return (
         <>
             <Header />
-            <main className={"flex-grow"}>
+            <main className={"flex-grow justify-center content-center"}>
                 {children}
             </main>
             <div  />
