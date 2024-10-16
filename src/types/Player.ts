@@ -51,7 +51,7 @@ export interface Player {
         exitGameAfterDeathCount: number,
         gamesSurvivedCount: number,
         gamesKilledCount: number,
-        totalPlaytimeInMinutes: number,
+        totalPlayTimeInMinutes: number,
         achievements: {
             roleId: string,
             level: number,
