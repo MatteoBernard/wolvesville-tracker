@@ -1,6 +1,6 @@
 import {RolesResponse} from "../../types";
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {getRoles} from "../../api/vw-api";
+import {getRoles} from "../../utils/vw-api";
 
 interface RolesState {
     data: RolesResponse | null;

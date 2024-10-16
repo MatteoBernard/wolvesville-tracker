@@ -1,6 +1,6 @@
 import { Template } from "./Template";
 import { useEffect, useState } from "react";
-import { getPlayer } from "../api/vw-api";
+import { getPlayer } from "../utils/vw-api";
 import {Link, useParams} from "react-router-dom";
 import { Player } from "../types";
 import { getFormattedDate, isWithinFiveMinutes } from "../utils";

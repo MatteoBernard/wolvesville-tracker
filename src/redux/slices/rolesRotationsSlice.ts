@@ -1,5 +1,5 @@
 import {RolesRotationResponse} from "../../types";
-import {getRolesRotations} from "../../api/vw-api";
+import {getRolesRotations} from "../../utils/vw-api";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 interface RolesRotationsState {

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { fetchRoles, fetchRolesRotations } from "../redux/slices";
 import { Template } from "./Template";
 import { Clan, Player } from "../types";
-import { searchClan, searchPlayer } from "../api/vw-api";
+import { searchClan, searchPlayer } from "../utils/vw-api";
 import { Link } from "react-router-dom";
 
 export const Home = () => {
