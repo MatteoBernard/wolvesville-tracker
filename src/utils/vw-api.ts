@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {Clan, ClanInfos, ClanMember, Player, RolesResponse, RolesRotationResponse} from "../types";
+import {Clan, ClanInfos, ClanMember, GameConfig, Player, RolesResponse} from "../types";
 
 const API_KEY = 'SECRET_KEY';
 const API_URL = 'https://api.wolvesville.com/';
@@ -20,9 +20,9 @@ export const getRoles = async (): Promise<RolesResponse> => {
     }
 }
 
-export const getRolesRotations = async (): Promise<RolesRotationResponse> => {
+export const getRolesRotations = async (): Promise<GameConfig[]> => {
     try {
-        const response = await axios.get<RolesRotationResponse>(API_URL + 'rolesRotations', { headers: headers });
+        const response = await axios.get<GameConfig[]>(API_URL + 'roleRotations', { headers: headers });
         console.log(response.data);
         return response.data;
     } catch (error) {

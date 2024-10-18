@@ -1,9 +1,9 @@
-import {RolesRotationResponse} from "../../types";
+import {GameConfig} from "../../types";
 import {getRolesRotations} from "../../utils/vw-api";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 interface RolesRotationsState {
-    data: RolesRotationResponse | null;
+    data: GameConfig[] | null;
     loading: boolean;
     error: string | null;
     lastFetched: number | null;

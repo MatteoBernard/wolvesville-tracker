@@ -19,7 +19,3 @@ export interface GameConfig {
     roleRotations: RoleRotationWrapper[];
     minWinRequirement: number;
 }
-
-export interface RolesRotationResponse {
-    data: GameConfig[];
-}
