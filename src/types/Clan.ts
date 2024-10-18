@@ -16,7 +16,7 @@ export interface Clan {
 }
 
 export interface ClanMember {
-    id: string,
+    playerId: string,
     creationTime: string,
     xp: number,
     status: string,
