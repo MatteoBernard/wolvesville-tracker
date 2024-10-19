@@ -52,69 +52,74 @@ export const Home = () => {
 
     return (
         <Template>
-            <div className={"flex flex-col justify-center items-center p-6 m-16 border rounded-lg border-wv-red border-8 max-w-2xl mx-auto bg-wv-white"}>
-                <h1 className={"text-2xl m-4 font-bold"}>{isPlayerSelected ? "Search for a player" : "Search for a clan"}</h1>
-                <div className={"flex gap-6 mb-6"}>
-                    <button
-                        onClick={() => {
-                            setIsPlayerSelected(true);
-                            setResult(null);
-                        }}
-                        className={`px-6 py-3 text-md rounded ${isPlayerSelected ? 'bg-wv-red text-white' : 'bg-gray-200 text-gray-700'}`}
-                    >
-                        Player
-                    </button>
-                    <button
-                        onClick={() => {
-                            setIsPlayerSelected(false);
-                            setResult(null);
-                        }}
-                        className={`px-6 py-3 text-md rounded ${!isPlayerSelected ? 'bg-wv-red text-white' : 'bg-gray-200 text-gray-700'}`}
-                    >
-                        Clan
-                    </button>
-                </div>
-                <input
-                    type="text"
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    className={"search-input px-6 py-3 border rounded w-80 mb-6 text-md"}
-                />
-                <button
-                    onClick={() => handleSearch()}
-                    className={"px-6 py-3 bg-wv-red text-white rounded text-md"}
-                >
-                    Search
-                </button>
-                {error && <p className={"text-red-500 mt-6 text-lg"}>{error}</p>}
-                {result && (
-                    <div className={"result-container mt-6 w-1/2 flex justify-center"}>
-                        {isPlayerSelected ? (
-                            <Link
-                                to={`/player/${(result as Player).id}`}
-                                className={"bg-gray-100 p-6 rounded cursor-pointer text-md"}
-                            >
-                                {(result as Player).username}
-                            </Link>
-                        ) : (
-                            result && (
-                                <ul className={"max-h-96 overflow-y-auto"}>
-                                    {(result as Clan[]).map(clan => (
-                                        <li key={clan.id} className={"bg-gray-100 p-4 rounded text-lg m-2"}>
-                                            <Link
-                                                to={`/clan/${clan.id}`}
-                                                className={"cursor-pointer"}
-                                            >
-                                                {clan.name}
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            )
-                        )}
+            <div className={"m-3"}>
+                <div
+                    className={"flex flex-col justify-center items-center p-4 border rounded-lg border-wv-red border-8 max-w-2xl m-auto bg-wv-white"}>
+                    <h1 className={"text-xl sm:text-2xl m-4 font-bold"}>{isPlayerSelected ? "Search for a player" : "Search for a clan"}</h1>
+                    <div className={"flex gap-6 mb-6"}>
+                        <button
+                            onClick={() => {
+                                setIsPlayerSelected(true);
+                                setResult(null);
+                            }}
+                            className={`px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-md rounded ${isPlayerSelected ? 'bg-wv-red text-white' : 'bg-gray-200 text-gray-700'}`}
+                        >
+                            Player
+                        </button>
+                        <button
+                            onClick={() => {
+                                setIsPlayerSelected(false);
+                                setResult(null);
+                            }}
+                            className={`px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-md rounded ${!isPlayerSelected ? 'bg-wv-red text-white' : 'bg-gray-200 text-gray-700'}`}
+                        >
+                            Clan
+                        </button>
                     </div>
-                )}
+                    <input
+                        type="text"
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                        className={"search-input px-4 sm:px-6 py-2 sm:py-3 border rounded w-64 sm:w-80 mb-6 text-sm sm:text-md"}
+                    />
+                    <button
+                        onClick={() => handleSearch()}
+                        className={"px-4 sm:px-6 py-2 sm:py-3 bg-wv-red text-white rounded text-sm sm:text-md"}
+                    >
+                        Search
+                    </button>
+                    {error && <p className={"text-red-500 mt-6 text-sm sm:text-lg"}>{error}</p>}
+                    {result && (
+                        <div className={"result-container mt-6 w-full sm:w-1/2 flex justify-center"}>
+                            {isPlayerSelected ? (
+                                <Link
+                                    to={`/player/${(result as Player).id}`}
+                                    className={"bg-gray-100 p-4 sm:p-6 rounded cursor-pointer text-sm sm:text-md"}
+                                >
+                                    {(result as Player).username}
+                                </Link>
+                            ) : (
+                                result && (
+                                    <ul className={"max-h-96 overflow-y-auto"}>
+                                        {(result as Clan[]).map(clan => (
+                                            <li key={clan.id}
+                                                className={"bg-gray-100 p-2 sm:p-4 rounded text-sm sm:text-lg m-2"}>
+                                                <Link
+                                                    to={`/clan/${clan.id}`}
+                                                    className={"cursor-pointer"}
+                                                >
+                                                    {clan.name}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )
+                            )}
+                        </div>
+                    )}
+                </div>
             </div>
+
         </Template>
     );
 };

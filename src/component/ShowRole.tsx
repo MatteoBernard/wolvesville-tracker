@@ -12,7 +12,7 @@ interface RoleDialogProps {
 export const RoleDialog: React.FC<RoleDialogProps> = ({ role, onClose }) => {
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white p-6 rounded-lg shadow-lg w-1/2 flex justify-center flex-col items-center">
+            <div className="bg-white p-6 rounded-lg shadow-lg w-4/5 md:w-1/2 flex justify-center flex-col items-center">
                 <h2 className="text-2xl font-bold mb-4">{transformRoleId(role.id)}</h2>
                 <img src={role.image.url || defaultImage} alt={role.id} className="w-32 h-32 mb-4" onError={(e) => (e.currentTarget.src = defaultImage)} />
                 <p className={"p-4"}>{role.description}</p>
