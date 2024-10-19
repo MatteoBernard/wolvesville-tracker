@@ -1,5 +1,5 @@
 import {Route, Routes} from "react-router-dom";
-import {AllRoles, Home, RolesRotation, ShowClan, ShowPlayer} from "../pages";
+import {AllRoles, GTR, Home, RolesRotation, ShowClan, ShowPlayer} from "../pages";
 
 export const RootNavigation = () => {
     return (
@@ -9,6 +9,7 @@ export const RootNavigation = () => {
             <Route path="/rolesRotation" element={<RolesRotation />} />
             <Route path="/player/:id" element={<ShowPlayer />} />
             <Route path="/clan/:id" element={<ShowClan />} />
+            <Route path="/guessTheRole" element={<GTR />} />
             <Route path="*" element={<Home />} />
         </Routes>
     );

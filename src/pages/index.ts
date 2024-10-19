@@ -3,3 +3,4 @@ export * from './ShowClan';
 export * from './AllRoles';
 export * from './ShowPlayer';
 export * from './RolesRotation';
+export * from './GTR';
