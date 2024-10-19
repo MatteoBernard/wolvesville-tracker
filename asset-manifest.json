@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/wolvesville-tracker/static/css/main.600136d3.css",
+    "main.js": "/wolvesville-tracker/static/js/main.92f89b3f.js",
+    "static/js/453.50b8b62c.chunk.js": "/wolvesville-tracker/static/js/453.50b8b62c.chunk.js",
+    "static/media/wv-logo-nobg.png": "/wolvesville-tracker/static/media/wv-logo-nobg.4b2f5b37c420a75296d9.png",
+    "static/media/rose.png": "/wolvesville-tracker/static/media/rose.895309e4fa8fac6a56f9.png",
+    "index.html": "/wolvesville-tracker/index.html",
+    "main.600136d3.css.map": "/wolvesville-tracker/static/css/main.600136d3.css.map",
+    "main.92f89b3f.js.map": "/wolvesville-tracker/static/js/main.92f89b3f.js.map",
+    "453.50b8b62c.chunk.js.map": "/wolvesville-tracker/static/js/453.50b8b62c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.600136d3.css",
+    "static/js/main.92f89b3f.js"
+  ]
+}
