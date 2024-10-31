@@ -19,7 +19,6 @@ export const AllRoles = () => {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         {roles.data ? (
                             roles.data.roles
-                                .filter((role) => !role.id.includes('random'))
                                 .map((role) => (
                                     <div
                                         key={role.id}

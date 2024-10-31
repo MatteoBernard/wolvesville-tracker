@@ -17,7 +17,7 @@ export const Home = () => {
     const [error, setError] = useState('');
 
     useEffect(() => {
-        const THREE_DAYS_IN_MS = 3 * 24 * 60 * 60 * 1000;
+        const THREE_DAYS_IN_MS = 24 * 60 * 60 * 1000;
         const shouldFetch = !lastFetched || (Date.now() - lastFetched > THREE_DAYS_IN_MS);
 
         if (shouldFetch) {
