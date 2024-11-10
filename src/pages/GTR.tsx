@@ -54,11 +54,11 @@ export const GTR = () => {
             <div className={"m-3"}>
                 <div
                     className={"wv-red p-6 m-12 border rounded-lg border-wv-red border-8 max-w-4xl mx-auto bg-wv-white"}>
-                    <h1 className={"text-4xl font-bold mb-6 text-center"}>Guess the role</h1>
+                    <h1 className={"text-4xl font-bold mb-6 text-center"} id={"title"}>Guess the role</h1>
 
                     {!game ? (
                         <div className={"flex justify-center mt-6"}>
-                            <button className={"bg-wv-blue p-4 rounded-lg"} onClick={startGame}>Start Game !</button>
+                            <button className={"bg-wv-blue p-4 rounded-lg"} onClick={startGame} id={"start-btn"}>Start Game !</button>
                         </div>) : (
                         <>
                             <div className={"mb-4"}>
@@ -72,9 +72,12 @@ export const GTR = () => {
                                         list="roles-list"
                                         disabled={roleFound}
                                         style={{height: '40px'}}
+                                        id={"role-input"}
                                     />
                                     <button className={"p-2 bg-wv-blue rounded-r text-sm"} onClick={handleRoleSubmit}
-                                            disabled={roleFound} style={{height: '40px'}}>
+                                            disabled={roleFound} style={{height: '40px'}}
+                                            id={"role-submit-btn"}
+                                    >
                                         Try
                                     </button>
                                 </div>
@@ -88,13 +91,13 @@ export const GTR = () => {
                             </div>
 
                             {roleFound && (
-                                <div className={"text-center text-green-500 m-4"}>
+                                <div className={"text-center text-green-500 m-4"} id={"congratulations"}>
                                     Congratulations! You have found the correct role.
                                 </div>
                             )}
 
                             {!roleFound && attempts >= 5 && game.getChosenRole() && (
-                                <div className={"text-center text-red-500 mb-4"}>
+                                <div className={"text-center text-red-500 mb-4"} id={"hint"}>
                                     Hint: {game.getChosenRole()?.description}
                                 </div>
                             )}
@@ -112,17 +115,18 @@ export const GTR = () => {
                                 <tbody>
                                 {proposedRoles.map((role, index) => {
                                     return (
-                                        <tr key={index} className={"text-center"}>
+                                        <tr key={index} className={"text-center"} id={`try-${index}`}>
                                             <td className={`py-2 border-b border-gray-300 ${game?.getChosenRole()?.image.url === role.image.url ? 'bg-green-400' : 'bg-red-400'}`}>
                                                 <img
                                                     src={role.image.url}
                                                     alt={transformRoleId(role.id)}
                                                     className={"w-8 h-8 mx-auto"}
+                                                    id={`try-${index}-img`}
                                                 />
                                             </td>
-                                            <td className={`py-2 border-b border-gray-300 ${game?.getChosenRole()?.id === role.id ? 'bg-green-400' : 'bg-red-400'}`}>{transformRoleId(role.id)}</td>
-                                            <td className={`py-2 border-b border-gray-300 ${game?.getChosenRole()?.team === role.team ? 'bg-green-400' : 'bg-red-400'}`}>{transformString(role.team)}</td>
-                                            <td className={`py-2 border-b border-gray-300 ${game?.getChosenRole()?.aura === role.aura ? 'bg-green-400' : 'bg-red-400'}`}>{transformString(role.aura)}</td>
+                                            <td className={`py-2 border-b border-gray-300 ${game?.getChosenRole()?.id === role.id ? 'bg-green-400' : 'bg-red-400'}`} id={`try-${index}-name`}>{transformRoleId(role.id)}</td>
+                                            <td className={`py-2 border-b border-gray-300 ${game?.getChosenRole()?.team === role.team ? 'bg-green-400' : 'bg-red-400'}`} id={`try-${index}-team`}>{transformString(role.team)}</td>
+                                            <td className={`py-2 border-b border-gray-300 ${game?.getChosenRole()?.aura === role.aura ? 'bg-green-400' : 'bg-red-400'}`} id={`try-${index}-aura`}>{transformString(role.aura)}</td>
                                         </tr>
                                     );
                                 })}
@@ -131,7 +135,7 @@ export const GTR = () => {
 
                             {roleFound && (
                                 <div className={"flex justify-center mt-6"}>
-                                    <button className={"bg-wv-blue p-4 rounded-lg"} onClick={startGame}>Restart Game
+                                    <button className={"bg-wv-blue p-4 rounded-lg"} onClick={startGame} id={"restart-btn"}>Restart Game
                                     </button>
                                 </div>
                             )}
