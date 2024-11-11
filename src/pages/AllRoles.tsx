@@ -32,7 +32,7 @@ export const AllRoles = () => {
                                             className="w-16 h-16 mb-2"
                                             onError={(e) => (e.currentTarget.src = defaultImage)}
                                         />
-                                        <h2 className="text-lg font-bold text-center" id={"role-name"}>{transformRoleId(role.id)}</h2>
+                                        <h2 className="text-lg font-bold text-center" id={`role-label-${role.id}`}>{transformRoleId(role.id)}</h2>
                                     </div>
                                 ))
                         ) : (
